@@ -9,4 +9,5 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='shelter/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='shelter/logout.html'), name='logout'),
+    path('update_animal/<str:id>/', views.update_animal, name='update-animal'),
 ]

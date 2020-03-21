@@ -6,9 +6,9 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="card card-body">
-        <h5>ADD ANIMAL</h5>
+        <h5>ANIMAL</h5>
 
-			<form action="{% url 'add-animal' %}" method="POST">
+			<form action="" method="POST">
 				{% csrf_token %}
 				{{ form.as_p }}
 				<input type="submit" name="Submit">

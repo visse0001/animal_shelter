@@ -67,3 +67,20 @@ def add_animal(request):
     context = {'form': form}
 
     return render(request, 'shelter/animal_form.html', context)
+
+
+def update_animal(request, id):
+    animal = Animal.objects.get(id=id)
+    form = AnimalForm(instance=animal)
+
+    if request.method == "POST":
+        form = AnimalForm(request.POST, instance=animal)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Update successed!')
+
+            return redirect('home')
+
+    context = {'form': form}
+
+    return render(request, 'shelter/animal_form.html', context)

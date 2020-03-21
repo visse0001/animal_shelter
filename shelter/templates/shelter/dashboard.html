@@ -22,7 +22,7 @@
 
 				{% for animal in animals %}
 					<tr>
-{#						<td><a class="btn btn-sm btn-info" href="{% url 'animal' animal.id %}">View</a></td>#}
+						<td><a class="btn btn-sm btn-info" href="{% url 'update-animal' animal.id %}">View</a></td>
 						<td>{{animal.name}}</td>
 						<td>{{animal.type}}</td>
 						<td>{{animal.daily_ration}} kg</td>
