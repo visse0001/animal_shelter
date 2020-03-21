@@ -1,4 +1,4 @@
-# Blog, django project
+# Animal Shelter, django project
 Work in progress...
 
 <br />
