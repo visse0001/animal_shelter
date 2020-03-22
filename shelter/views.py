@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.db.models import Sum
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import Animal
 from .forms import AnimalForm, UserRegisterForm
@@ -23,22 +24,23 @@ def register(request):
     return render(request, 'shelter/register.html', context)
 
 
+@login_required(login_url='login')
 def home(request):
     total_animals = Animal.objects.count()
 
     feed_ration = Animal.objects.aggregate(feed_ration_sum=Sum('daily_ration'))
     feed_ration_num = feed_ration['feed_ration_sum']
 
-    only_cats = Animal.objects.filter(type='Cat')
+    only_cats = Animal.objects.filter(type='cat')
     total_cats = only_cats.count()
 
-    only_dogs = Animal.objects.filter(type='Dog')
+    only_dogs = Animal.objects.filter(type='dog')
     total_dogs = only_dogs.count()
 
-    dogs_feed_ration = Animal.objects.filter(type="Dog").aggregate(dogs_feed_ration_sum=Sum('daily_ration'))
+    dogs_feed_ration = Animal.objects.filter(type="dog").aggregate(dogs_feed_ration_sum=Sum('daily_ration'))
     dogs_feed_ration_num = dogs_feed_ration['dogs_feed_ration_sum']
 
-    cats_feed_ration = Animal.objects.filter(type="Cat").aggregate(cats_feed_ration_sum=Sum('daily_ration'))
+    cats_feed_ration = Animal.objects.filter(type="cat").aggregate(cats_feed_ration_sum=Sum('daily_ration'))
     cats_feed_ration_num = cats_feed_ration['cats_feed_ration_sum']
 
     animals = Animal.objects.all()
@@ -55,6 +57,7 @@ def home(request):
     return render(request, 'shelter/dashboard.html', context)
 
 
+@login_required(login_url='login')
 def add_animal(request):
     if request.method == "POST":
         form = AnimalForm(request.POST)
@@ -69,6 +72,7 @@ def add_animal(request):
     return render(request, 'shelter/animal_form.html', context)
 
 
+@login_required(login_url='login')
 def update_animal(request, id):
     animal = Animal.objects.get(id=id)
     form = AnimalForm(instance=animal)
@@ -84,3 +88,22 @@ def update_animal(request, id):
     context = {'form': form}
 
     return render(request, 'shelter/animal_form.html', context)
+
+
+def delete_animal(request, id):
+    animal = Animal.objects.get(id=id)
+    if request.method == "POST":
+        animal.delete()
+        return redirect('home')
+
+    context = {'animal': animal}
+
+    return render(request, 'shelter/delete.html', context)
+
+
+def animals_for_adoption(request):
+    animals_for_adoption = Animal.objects.filter(status='for adoption')
+    print(animals_for_adoption)
+    context = {'animals_for_adoption': animals_for_adoption}
+
+    return render(request, 'shelter/animals_for_adoption.html', context)

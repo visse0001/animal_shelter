@@ -1,0 +1,31 @@
+{%  extends 'shelter/main.html' %}
+
+{% block content %}
+
+
+<br>
+
+<div class="row">
+	<div class="col-md-5">
+		<h5>ANIMALS FOR ADOPTION:</h5>
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+				</tr>
+
+				{% for animal in animals_for_adoption %}
+					<tr>
+						<td>{{animal.name}}</td>
+						<td>{{animal.type}}</td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
