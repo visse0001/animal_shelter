@@ -5,6 +5,11 @@ Work in progress...
 The Animal Shelter application.
 <br/>
 Displaying information about animals and help manage orders for animals daily feed rations.
+<br />
+
+How it looks:
+
+![How it looks](https://github.com/visse0001/animal_shelter/blob/master/static/images/screenshot_animal_shelter.png?raw=true)
 
 
 ## Download
