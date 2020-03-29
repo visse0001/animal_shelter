@@ -17,14 +17,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            {#      {% if request.user.is_staff %}#}
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
             </li>
-            {#      <li class="nav-item">#}
-            {#        <a class="nav-link" href="{% url 'animal' %}">Animal</a>#}
-            {#      </li>#}
-            {#      {% endif %}#}
         </ul>
         <div class="navbar-nav">
             {% if user.is_authenticated %}
@@ -36,8 +31,4 @@
             <a class="nav-item nav-link" href="{% url 'animal-for-adoption' %}">Adoption</a>
         </div>
     </div>
-
-    {#  <span class="hello-msg">Hello, {{request.user}}</span>#}
-    {#  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>#}
-
 </nav>

@@ -1,76 +1,44 @@
-{%  extends 'shelter/main.html' %}
+{% extends 'shelter/main.html' %}
 
 {% block content %}
 
-{%  include 'shelter/status.html' %}
+    {% include 'shelter/status.html' %}
 
-<br>
+    <br>
 
-<div class="row">
-	<div class="col-md-8">
-		<h5>ANIMALS:</h5>
-		<hr>
-		<div class="card card-body">
-			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'add-animal' %}">Add New Animal</a>
-			<table class="table table-sm">
-				<tr>
-					<th></th>
-					<th></th>
-					<th>Id</th>
-					<th>Name</th>
-					<th>Type</th>
-					<th>Daily ration</th>
-					<th>Status</th>
-				</tr>
+    <div class="row">
+        <div class="col-md-8">
+            <h5>ANIMALS:</h5>
+            <hr>
+            <div class="card card-body">
+                <a class="btn btn-primary  btn-sm btn-block" href="{% url 'add-animal' %}">Add New Animal</a>
+                <table class="table table-sm">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Daily ration</th>
+                        <th>Status</th>
+                    </tr>
 
-				{% for animal in animals %}
-					<tr>
-						<td><a class="btn btn-sm btn-info" href="{% url 'update-animal' animal.id %}">View</a></td>
-						<td><a class="btn btn-sm btn-info" href="{% url 'delete-animal' animal.id %}">Delete</a></td>
-						<td>{{animal.id}}</td>
-						<td>{{animal.name}}</td>
-						<td>{{animal.type}}</td>
-						<td>{{animal.daily_ration}} kg</td>
-						<td>{{animal.status}}</td>
-					</tr>
-				{% endfor %}
+                    {% for animal in animals %}
+                        <tr>
+                            <td><a class="btn btn-sm btn-info" href="{% url 'update-animal' animal.id %}">View</a></td>
+                            <td><a class="btn btn-sm btn-info" href="{% url 'delete-animal' animal.id %}">Delete</a>
+                            </td>
+                            <td>{{ animal.id }}</td>
+                            <td>{{ animal.name }}</td>
+                            <td>{{ animal.type }}</td>
+                            <td>{{ animal.daily_ration }} kg</td>
+                            <td>{{ animal.status }}</td>
+                        </tr>
+                    {% endfor %}
 
-			</table>
-		</div>
-	</div>
+                </table>
+            </div>
+        </div>
 
-{#	<div class="col-md-7">#}
-{#		<h5>LAST 5 ORDERS</h5>#}
-{#		<hr>#}
-{#		<div class="card card-body">#}
-{#			#}
-{#			<table class="table table-sm">#}
-{#				<tr>#}
-{#					<th>Product</th>#}
-{#					<th>Date Orderd</th>#}
-{#					<th>Status</th>#}
-{#					<th>Update</th>#}
-{#					<th>Remove</th>#}
-{#				</tr>#}
-{##}
-{#				{% for order in orders %}#}
-{#					<tr>#}
-{#						<td>{{order.product}}</td>#}
-{#						<td>{{order.date_created}}</td>#}
-{#						<td>{{order.status}}</td>#}
-{#						<td><a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}">Update</a></td>#}
-{##}
-{#						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Delete</a></td>#}
-{##}
-{#					</tr>#}
-{#				{% endfor %}#}
-{##}
-{#		#}
-{#			</table>#}
-{#		</div>#}
-{#	</div>#}
-{##}
-{#</div>#}
-
-</div>
+    </div>
 {% endblock %}

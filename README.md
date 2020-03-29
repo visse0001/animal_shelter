@@ -4,9 +4,7 @@ Work in progress...
 <br />
 The Animal Shelter application.
 <br/>
-Displaying information about animals and helps you manage pet food orders.
-<br />
-In plans: creation of a site for non-logged users with information about the animals that can be adopted.
+Displaying information about animals and help manage orders for animals daily feed rations.
 
 ## Download
 
