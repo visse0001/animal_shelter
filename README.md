@@ -20,8 +20,8 @@ To begin using this application use link below to get started.
 
 ## Development setup
 
-- create venv
 - install Python 3.7.2
+- create venv
 - "pip install -r requirements.txt"
 
 ## Usage
