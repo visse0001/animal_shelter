@@ -7,7 +7,6 @@ from .models import Animal
 from .forms import AnimalForm, UserRegisterForm
 
 
-# Create your views here.
 def register(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
@@ -81,7 +80,7 @@ def update_animal(request, id):
         form = AnimalForm(request.POST, instance=animal)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Update successed!')
+            messages.success(request, f'Update succeeded!')
 
             return redirect('home')
 
