@@ -57,3 +57,6 @@ class Food(models.Model):
     feature = models.CharField(max_length=128, null=True, choices=FEATURE)
     weight = models.FloatField(null=True)
     price = models.FloatField(null=True)
+
+    def __str__(self):
+        return self.name
