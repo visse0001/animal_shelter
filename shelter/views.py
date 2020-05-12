@@ -115,7 +115,7 @@ def add_food(request):
             form.save()
             return redirect('/')
     else:
-        form = AnimalForm()
+        form = FoodForm()
 
     context = {'form': form}
 
