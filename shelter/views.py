@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import Animal
-from .forms import AnimalForm, UserRegisterForm
+from .forms import AnimalForm, UserRegisterForm, FoodForm
 
 
 def register(request):
@@ -106,3 +106,17 @@ def animals_for_adoption(request):
     context = {'animals_for_adoption': animals_for_adoption}
 
     return render(request, 'shelter/animals_for_adoption.html', context)
+
+@login_required(login_url='login')
+def add_food(request):
+    if request.method == "POST":
+        form = FoodForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = AnimalForm()
+
+    context = {'form': form}
+
+    return render(request, 'shelter/food_form.html', context)
