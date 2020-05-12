@@ -44,12 +44,13 @@ class Food(models.Model):
         ('adult', 'adult'),
         ('senior', 'senior'),
     )
-
     FEATURE = (
+        ('normal', 'normal'),
         ('low fat', 'low fat'),
         ('bulk', 'bulk'),
         ('high protein', 'high protein'),
     )
+
 
     name = models.CharField(max_length=128, null=True)
     form = models.CharField(max_length=128, null=True, choices=FORM)
