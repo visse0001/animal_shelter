@@ -18,3 +18,9 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+
+class FoodForm(ModelForm):
+    class Meta:
+        model = Food
+        fields = '__all__'
