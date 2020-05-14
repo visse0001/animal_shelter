@@ -32,3 +32,7 @@ To begin using this application use link below to get started.
 To create an admin account:
 <br />
 - "python manage.py createsuperuser"
+
+## Info
+
+HTML files are inspired by Corey Schafer's tutorial on YouTube channel.
