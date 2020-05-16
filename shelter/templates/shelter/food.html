@@ -12,8 +12,8 @@
                 <a class="btn btn-primary  btn-sm btn-block" href="{% url 'add-food' %}">Add New Food</a>
                 <table class="table table-sm">
                     <tr>
-                        <th></th>
-                        <th></th>
+{#                        <th></th>#}
+{#                        <th></th>#}
                         <th>Name</th>
                         <th>Form</th>
                         <th>Life stage</th>
@@ -24,8 +24,8 @@
 
                     {% for food in all_food %}
                         <tr>
-                            <td><a class="btn btn-sm btn-info" href="{% url 'update-food' food.id %}">View</a></td>
-                            <td><a class="btn btn-sm btn-info" href="{% url 'delete-food' food.id %}">Delete</a>
+{#                            <td><a class="btn btn-sm btn-info" href="{% url 'update-food' food.id %}">View</a></td>#}
+{#                            <td><a class="btn btn-sm btn-info" href="{% url 'delete-food' food.id %}">Delete</a>#}
                             </td>
                             <td>{{ food.name }}</td>
                             <td>{{ food.form }}</td>

@@ -3,7 +3,7 @@ from django.db.models import Sum
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import Animal
+from .models import Animal, Food
 from .forms import AnimalForm, UserRegisterForm, FoodForm
 
 
@@ -125,4 +125,8 @@ def add_food(request):
 
 @login_required(login_url='login')
 def food(request):
-    pass
+    all_food = Food.objects.all()
+
+    context = {'all_food': all_food}
+
+    return render(request, 'shelter/food.html', context)
