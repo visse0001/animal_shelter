@@ -13,4 +13,5 @@ urlpatterns = [
     path('delete_animal/<str:id>/', views.delete_animal, name='delete-animal'),
     path('animals_for_adoption/', views.animals_for_adoption, name='animal-for-adoption'),
     path('add-food/', views.add_food, name='add-food'),
+    path('food/', views.food, name='food'),
 ]

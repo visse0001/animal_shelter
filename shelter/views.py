@@ -107,6 +107,7 @@ def animals_for_adoption(request):
 
     return render(request, 'shelter/animals_for_adoption.html', context)
 
+
 @login_required(login_url='login')
 def add_food(request):
     if request.method == "POST":
@@ -120,3 +121,8 @@ def add_food(request):
     context = {'form': form}
 
     return render(request, 'shelter/food_form.html', context)
+
+
+@login_required(login_url='login')
+def food(request):
+    pass
