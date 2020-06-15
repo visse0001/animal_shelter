@@ -1,7 +1,5 @@
 # Animal Shelter, django project
-Work in progress...
 
-<br />
 The Animal Shelter application.
 <br/>
 Displaying information about animals and help manage orders for animals daily feed rations.
