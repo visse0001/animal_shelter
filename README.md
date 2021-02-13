@@ -19,17 +19,17 @@ To begin using this application use link below to get started.
 ## Development setup
 
 - install Python 3.7.2
-- create venv
-- "pip install -r requirements.txt"
+- Create Virtual Environment   
+`python3 -m venv env`
+- Install dependencies  
+`pip install -r requirements.txt`
 
 ## Usage
 
-- "python manage.py runserver"
-<br />
+- `python manage.py runserver`
 
-To create an admin account:
-<br />
-- "python manage.py createsuperuser"
+To create an admin account:  
+- `python manage.py createsuperuser`
 
 ## Info
 
