@@ -1,9 +1,9 @@
 # Animal Shelter, django project
 
 The Animal Shelter application.
-<br/>
+
 Displaying information about animals and help manage orders for animals daily feed rations.
-<br />
+
 
 How it looks:
 
@@ -18,7 +18,7 @@ To begin using this application use link below to get started.
 
 ## Development setup
 
-- install Python 3.7.2
+- Install Python 3.7
 - Create Virtual Environment   
 `python3 -m venv env`
 - Install dependencies  
